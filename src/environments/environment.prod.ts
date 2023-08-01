@@ -1,3 +1,7 @@
 export const environment = {
-  production: true
+  production: true,
+  prefix : "PAXIS-",
+  url :{
+    placeholder : "https://jsonplaceholder.typicode.com"
+  } 
 };

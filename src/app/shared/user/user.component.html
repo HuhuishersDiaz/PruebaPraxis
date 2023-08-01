@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{user.nombre }} {{ user.apellidos}}</ion-title>
+    <ion-buttons slot="end" (click)="Close()">
+      <ion-button  [strong]="true" >close</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <img alt="Silhouette of a person's head" [src]="user.foto"      onerror="this.onerror=null;this.src='//ionicframework.com/docs/img/demos/avatar.svg';" />
+    <ion-item>
+      Nombre : {{user.nombre }} {{ user.apellidos}}
+    </ion-item>
+    <ion-item>
+      Edad : {{user.edad }} 
+      Genero : {{user.genero }} 
+    </ion-item>
+    <ion-item>
+      pasatiempos : 
+      <p *ngFor="let item of user.pasatiempos">
+        {{item.value}},
+      </p>
+    </ion-item>
+    <ion-item>
+      Lat : {{user.ubicacion?.lat}} 
+      Long : {{user.ubicacion?.long}} 
+    </ion-item>
+    <ion-item>
+      <ion-button color="primary"  size="small"(click)="savePicture(user)" > Descargar Imagen </ion-button>
+    </ion-item>
+</ion-content>

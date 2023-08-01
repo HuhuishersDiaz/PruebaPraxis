@@ -1,0 +1,70 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title> Tab 2 </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Tab 2</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <form [formGroup]="frmAdd" (submit)="save()">
+    <ion-item>
+      <ion-input
+        labelPlacement="stacked"
+        label="Nombre"
+        formControlName="nombre"
+        placeholder="Armando "
+      ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input
+        labelPlacement="stacked"
+        label="Apellidos"
+        formControlName="apellidos"
+        placeholder="Diaz Diaz"
+      ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input
+        labelPlacement="stacked"
+        label="Edad"
+        formControlName="edad"
+        placeholder="1-100 "
+        type="number"
+      ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-select formControlName="genero" label="Genero" placeholder="M/F">
+        <ion-select-option value="M">Masculino</ion-select-option>
+        <ion-select-option value="F">Femenino</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      Pasatiempos
+      <ion-list>
+        <ion-item *ngFor="let item of pasatiemposList">
+          <ion-checkbox labelPlacement="end" (ionChange)="pasatiempo($event,item)" [checked]="item.checked"
+            >{{item.value}}</ion-checkbox
+          >
+        </ion-item>
+      </ion-list>
+    </ion-item>
+
+    <ion-item>
+      <ion-button (click)="takePicture()">Tomar foto</ion-button>
+      <ion-img [src]="foto"></ion-img>
+    </ion-item>
+
+  <ion-item>
+    su ubicacion lat: {{lat}}  long:{{ long}}
+  </ion-item> 
+
+    <ion-item>
+      <ion-button color="success" type="submit"> Guardar </ion-button>
+    </ion-item>
+  </form>
+</ion-content>

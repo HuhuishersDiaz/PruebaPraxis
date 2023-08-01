@@ -1,0 +1,11 @@
+ion-card{
+    position: relative;
+    .btn{
+        &__options{
+            position: absolute;
+            color: white;
+            top: 10px;
+            right: 10px;
+        }
+    }
+}

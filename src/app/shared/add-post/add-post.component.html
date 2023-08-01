@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{titleModal}}</ion-title>
+    <ion-buttons slot="end" (click)="Close()">
+      <ion-button  [strong]="true" >close</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <form [formGroup]="frmAdd" (submit)="submitForm()">
+    <ion-item>
+      <ion-input labelPlacement="stacked" label="Title" formControlName="title" placeholder="Enter title"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-textarea labelPlacement="stacked" label="Body"  formControlName="body" placeholder="Enter Body"></ion-textarea>
+    </ion-item>
+    <ion-button color="primary" type="submit" size="small"> Guardar </ion-button>
+  </form>
+</ion-content>
